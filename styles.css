@@ -1,30 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   width: 100%;
   height: 100vh;
   margin: 0;
-  background-color: #1b1b32;
+  background: linear-gradient(to right, #141e30, #243b55);
   color: #f5f6f7;
-  font-family: Tahoma;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
+  padding: 2rem;
 }
 
-h1, p {
-  margin: 1em auto;
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #2c2f4a;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+header {
   text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  margin-bottom: 0.5em;
 }
 
 form {
-  width: 60vw;
-  max-width: 500px;
-  min-width: 300px;
-  margin: 0 auto;
-  padding-bottom: 2em;
+  width: 100%;
 }
 
 fieldset {
   border: none;
-  padding: 2rem 0;
-  border-bottom: 3px solid #3b3b4f;
+  padding: 1.5rem 0;
+  border-bottom: 2px solid #3b3b4f;
 }
 
 fieldset:last-of-type {
@@ -33,44 +49,82 @@ fieldset:last-of-type {
 
 label {
   display: block;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
+  font-weight: 500;
 }
 
 input,
 textarea,
 select {
-  margin: 10px 0 0 0;
   width: 100%;
-  min-height: 2em;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #0a0a23;
+  color: #ffffff;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-input, textarea {
-  background-color: #0a0a23;
-  border: 1px solid #0a0a23;
-  color: #ffffff;
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #00bcd4;
+  box-shadow: 0 0 4px #00bcd4;
 }
 
 .inline {
   width: unset;
-  margin: 0 0.5em 0 0;
+  margin-right: 0.5em;
   vertical-align: middle;
 }
 
 input[type="submit"] {
   display: block;
-  width: 60%;
-  margin: 1em auto;
-  height: 2em;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1.5rem;
   font-size: 1.1rem;
-  background-color: #3b3b4f;
-  border-color: white;
-  min-width: 300px;
+  background-color: #00bcd4;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0192a5;
 }
 
 input[type="file"] {
-  padding: 1px 2px;
+  padding: 0.3rem;
+  background-color: transparent;
 }
 
-#terms-and-conditions, a {
-  color: #dfdfe2;
+.terms-label {
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+a {
+  color: #90e0ef;
+  text-decoration: underline;
+}
+
+.required {
+  color: #ff6b6b;
+}
+
+@media (max-width: 500px) {
+  main {
+    padding: 1.25rem;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    font-size: 1rem;
+  }
 }
